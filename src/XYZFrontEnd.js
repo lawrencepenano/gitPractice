@@ -19,7 +19,7 @@ const XYZFrontEnd = () => {
     const { control, handleSubmit, register, errors, reset, getValues, setValue } = useForm();
     const [formData, setFormData] = useState({
         letters: "",
-        direction: {value:"horizantal",label:"horizantal"},
+        direction: {value:"vertical",label:"vertical"},
         size: ""
       })
 
@@ -154,16 +154,16 @@ const XYZFrontEnd = () => {
         })
       }
     
-      if(direction == "horizantal"){
+      if(direction == "horizontal"){
         let current_index = index;
           while(current_index <= size){
             result.map(value=>{
               value[current_index-1].map(
                 data=>{
                     if(data == 0){
-                      text = `<span class='text-white'>${' O '}</span>`;
+                      text = text + `<span class='text-white'>${' O '}</span>`;
                     }else {
-                      text = `<span class='text-black'>${' O '}</span>`;
+                      text = text +  `<span class='text-black'>${' O '}</span>`;
                     }
                 })
              })
@@ -232,8 +232,8 @@ const XYZFrontEnd = () => {
                                     return e;
                                 }}
                                 >
-                                    <option value="horizantal">Horizantal</option>
                                     <option value="vertical">Vertical</option>
+                                    <option value="horizontal">Horizantal</option>
                                 </select>
 
                                 <button 

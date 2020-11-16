@@ -81,8 +81,26 @@ function App() {
 
   const toggleTermAndConditionModal = () =>{
     setTermsAndConditionModal(!termsAndConditionModal)
+    sample();
   }
 
+  const sample2 = async ()=>{
+   let x = ()=>{
+      for (let j = 1; j <= 20; j++){
+        setTimeout(console.log("j"+j),1000000)
+      }
+    }
+    x();
+  }
+
+  const time = 1000;
+  const sample = () => {
+    for (let i = 1; i <= 20; i++ ){
+      console.log("i"+ i)
+      sample2();
+    }
+
+  }
   return (
     <Fragment>
         <Form onSubmit={handleSubmit(onSubmit)}>
@@ -175,7 +193,7 @@ function App() {
                                 <div className="row">
                                     <div className="col-6">
                                         <div className="form-group text-left">
-                                                {          console.log(errors),errors.card_no?
+                                                {errors.card_no?
                                                   <span style={{color:"red"}}>Card No. is required!</span>:
                                                   <label htmlFor="card_no">Card No. <span className="text-danger">*</span> </label>
                                                 }
@@ -366,7 +384,7 @@ function App() {
               </div>
               </Form>
               <Modal
-                isOpen={termsAndConditionModal}
+                  isOpen={termsAndConditionModal}
                   toggle={toggleTermAndConditionModal}
                   className={"modal-lg"}
                   backdrop={"static"}
