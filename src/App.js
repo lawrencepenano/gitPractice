@@ -331,7 +331,7 @@ function App() {
                              <div className="card mt-4 p-5">
                                <div className="row">
                                  <div className="col-12">
-                                       Gift Card
+                                       Gift Card is not Available
                                  </div>
                                </div>
                              </div>:
